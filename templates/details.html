@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather - {{data['location']['name']}}</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- <h2>{{name}}</h2> -->
+    <h2 style="background-color: rgb(120, 42, 9); padding: 2px 6px; color: aliceblue; font-size: 22px; margin-bottom: 50px;">{{data['location']['name']}}, {{data['location']['country']}} <i class="fa-li fa fa-spinner fa-spin"></i></h2>
+    <div class="display-row"><p>Temperature</p><p>{{data['current']['temp_c']}}°C</p></div>
+    <div class="display-row"><p>Humidity</p><p>{{data['current']['humidity']}}</p></div>
+    <div class="display-row"><p>Condition</p><p>{{data['current']['condition']['text']}}</p></div>
+    <div class="display-row"><p>Wind direction</p><p>{{data['current']['wind_dir']}}</p></div>
+    <div class="display-row"><p>Wind speed</p><p>{{data['current']['wind_kph']}}kph</p></div>
+<!-- {{data}} -->
+
+  <aside style="margin: 40px 20px;">
+    <p>Note:</p>
+    <p>Maximum Temperaure on earth: 56.7°C</p>
+    <p>Minimum Temperaure on earth: -89.2°C</p>
+    <p>Maximum wind velocity on earth: 408kph</p>
+  </aside>
+</body>
+</html>

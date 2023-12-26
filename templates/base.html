@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask application</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Portal</h1>
+        <div class="pre-component-container">
+            {% for x in info %}
+            <div class="component">
+                <h2>{{x['location']['name']}}</h2>
+                <p>Temperature: {{x['current']['temp_c']}}°C</p>
+                <p>Humidity: {{x['current']['humidity']}}</p>
+                <p>Wind: {{x['current']['wind_kph']}}kph</p>
+            </div>
+            {% endfor %}
+        </div>
+        <form action="/weather-info" class="weather-form" method="post">
+            <input type="text" name="search" id="" class="form-control" placeholder="Enter city. eg. Birgunj">
+            <button class="submit-btn" type="submit">Get</button>
+        </form>
+    </div>
+</body>
+</html>
